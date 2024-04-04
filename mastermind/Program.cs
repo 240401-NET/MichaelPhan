@@ -8,12 +8,16 @@ class Program
     {
         // string[] secretCode = GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         // GameMaintenance.printSecretCode(secretCode);
-        GameStart.AtGameBoot();
+        // GameStart.AtGameBoot();
 
         // List<Player> playersList = new();
         // FilePersistence.LoadPreviousPlayers(playersList);;
-        GameStart.HandleUserChoice();
+        // GameStart.HandleUserChoice();
 
         // List<Player> playersList = new();
+        string playerGuess = GameMaintenance.GetGuess();
+        string[] playerGuessArray = GameMaintenance.ConvertGuessToArray(playerGuess);
+        GameMaintenance.CheckIfGuessOnlyHasValidColors(playerGuessArray, GameMaintenance.colors);
+        GameMaintenance.ValidGuess(playerGuessArray, GameMaintenance.colors);
     }
 }
