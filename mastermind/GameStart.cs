@@ -38,6 +38,7 @@ class GameStart {
         while (userMenuOption != 9) 
         {
             userMenuOption = UserChoice(); 
+            
             switch(userMenuOption)
             {
                 case 1:
@@ -66,7 +67,6 @@ class GameStart {
                 PrintStartMenu();
                 break;
             }
-            
         }
     }
 }
