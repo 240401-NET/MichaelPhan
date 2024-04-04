@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace mastermind;
 
 class Rules {
@@ -5,19 +7,27 @@ class Rules {
     /* Display rules*/
     public static void LoadRules()
     {
-        Console.WriteLine("hello");
         Console.WriteLine("");
-        Console.WriteLine("Would you like to start your game now? (y/n)");
-        string userAnswer = Console.ReadLine()!;
+        Console.WriteLine("These are the rules.");
+        Console.WriteLine("");
+        Console.WriteLine("What would you like to do next?");
+        Console.WriteLine("");
+        Console.WriteLine("1. Main Menu");
+        Console.WriteLine("2. Start Game");
+        Console.WriteLine("");
+        int userAnswer = GameStart.UserChoice();
+        RulesMenuNavigation(userAnswer);
+    }
 
-        if (userAnswer == "y")
-        {
-            GameBoard.PrintBoard();
-        } else {
+    public static void RulesMenuNavigation(int menuOption) {
+        if (menuOption == 1) {
+            GameStart.HandleUserChoice();
+        }
+        else {
             Console.WriteLine("");
-            Console.WriteLine("Please choose one of the following options?");
-            GameStart.PrintStartMenu();
-            GameStart.HandleUserChoice(0);
+            Console.WriteLine("Please enter a valid menu optiion!");
+            int menuOptions = GameStart.UserChoice();
+            RulesMenuNavigation(menuOptions);
         }
     }
 }

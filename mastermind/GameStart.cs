@@ -8,17 +8,18 @@ class GameStart {
     {
         Console.WriteLine("");
         Console.WriteLine("Welcome to MasterMind!");
-        Console.WriteLine("Please chose one of the following options:");
-        Console.WriteLine("");
     }
 
     public static void  PrintStartMenu() 
     {
+        Console.WriteLine("");
+        Console.WriteLine("Please chose one of the following options:");
+        Console.WriteLine("");
         Console.WriteLine("1. Game");
         Console.WriteLine("2. Rules");
         Console.WriteLine("3. Leaderboards");
-        Console.WriteLine("4. Credits");
         Console.WriteLine("9. Exit");
+        Console.WriteLine("");
 
     }
 
@@ -31,8 +32,8 @@ class GameStart {
             return -1;
         }
     }
-
-    public static void HandleUserChoice(int userMenuOption) 
+    public static int userMenuOption = 0;
+    public static void HandleUserChoice() 
     {
         while (userMenuOption !=9)
         {
@@ -53,12 +54,11 @@ class GameStart {
                 break;
 
                 case 3:
-                break;
-                            
-                case 4:
+                Console.WriteLine("Leaderboard");
                 break;
 
                 case 9:
+                Console.WriteLine("");
                 Console.WriteLine("Goodbye! Thanks for playing!");
                 break;
 

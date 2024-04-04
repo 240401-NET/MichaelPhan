@@ -1,4 +1,6 @@
-﻿namespace mastermind;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace mastermind;
 
 class Program
 {
@@ -10,8 +12,7 @@ class Program
 
         // List<Player> playersList = new();
         // FilePersistence.LoadPreviousPlayers(playersList);;
-        int userMenuOption = 0;
-        GameStart.HandleUserChoice(userMenuOption);
+        GameStart.HandleUserChoice();
 
         // List<Player> playersList = new();
     }
