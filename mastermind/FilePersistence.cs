@@ -2,7 +2,7 @@ using System.IO;
 
 namespace mastermind;
 
-class FileWriter {
+class FilePersistence {
 
 /* What will be the purpose for this class?
     1. If a leaderboard.json(or .txt) file is not available, create one
@@ -10,6 +10,11 @@ class FileWriter {
     3. Append the .json file with updates to any of the player data information above, or if any new players are added
     4. Load the file each time the console application is running
 */
+// public static List<Player> LoadPreviousPlayers(List<Player> players) {
+
+// }
+
+
 
 
 }

@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        GameStart.AtGameBoot();
+        GameStart.PrintStartMenu();
+
+        // List<Player> playersList = new();
+        // FilePersistence.LoadPreviousPlayers(playersList);;
+        int userMenuOption = 0;
+        GameStart.HandleUserChoice(userMenuOption);
     }
 }

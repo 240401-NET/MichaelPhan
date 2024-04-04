@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace mastermind;
 
 class LeaderBoard {
@@ -9,4 +11,8 @@ class LeaderBoard {
             1.b.i. One side displays total number of solves in ascending order
             1.b.ii. Displays quickest solve in descending order
 */
+
+    public static void LoadLeaderboard() {
+        Console.WriteLine("These are the previous leaders");
+    }
 }
