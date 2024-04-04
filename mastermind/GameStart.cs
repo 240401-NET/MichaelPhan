@@ -4,6 +4,8 @@ namespace mastermind;
 
 class GameStart {
 
+    public static int userMenuOption = 0;
+
     public static void AtGameBoot() 
     {
         Console.WriteLine("");
@@ -32,7 +34,7 @@ class GameStart {
             return -1;
         }
     }
-    public static int userMenuOption = 0;
+    
     public static void HandleUserChoice() 
     {
         while (userMenuOption !=9)
