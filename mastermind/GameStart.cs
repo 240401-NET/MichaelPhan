@@ -35,14 +35,14 @@ class GameStart {
 
     public static void HandleUserChoice(int userMenuOption) 
     {
-        while (userMenuOption != 9) 
-        {
-            userMenuOption = UserChoice(); 
-            
+        userMenuOption = UserChoice(); 
+        
             switch(userMenuOption)
             {
                 case 1:
                 Console.WriteLine("Welcome to the game: Please enter a name");
+                GameBoard.PrintBoard();
+                GameEnd.AskNewGame();
                 break;
 
                 case 2:
@@ -52,7 +52,7 @@ class GameStart {
                 case 3:
                 LeaderBoard.LoadLeaderboard();
                 break;
-                
+                            
                 case 4:
                 Console.WriteLine("Colaborators:");
                 Console.WriteLine("Michael Phan");
@@ -67,6 +67,5 @@ class GameStart {
                 PrintStartMenu();
                 break;
             }
-        }
     }
 }

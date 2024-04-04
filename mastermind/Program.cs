@@ -11,5 +11,7 @@ class Program
         // FilePersistence.LoadPreviousPlayers(playersList);;
         int userMenuOption = 0;
         GameStart.HandleUserChoice(userMenuOption);
+
+        List<Player> playersList = new();
     }
 }
