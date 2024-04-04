@@ -5,10 +5,10 @@ class Rules {
     /* Display rules*/
     public static void LoadRules()
     {
-        Console.WriteLine("\u2649 hello");
+        Console.WriteLine("hello");
         Console.WriteLine("");
         Console.WriteLine("Would you like to start your game now? (y/n)");
-        string userAnswer = Console.ReadLine();
+        string userAnswer = Console.ReadLine()!;
 
         if (userAnswer == "y")
         {

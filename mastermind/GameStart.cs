@@ -4,7 +4,6 @@ namespace mastermind;
 
 class GameStart {
 
-
     public static void AtGameBoot() 
     {
         Console.WriteLine("");
@@ -28,21 +27,25 @@ class GameStart {
         try {
             return Convert.ToInt32(Console.ReadLine());
         } catch (Exception e) {
-            Console.WriteLine(e.Message + "Please enter a valid menu option!");
+            Console.WriteLine(e.Message);
             return -1;
         }
     }
 
     public static void HandleUserChoice(int userMenuOption) 
     {
+        while (userMenuOption !=9)
+        {
+
+        PrintStartMenu();
         userMenuOption = UserChoice(); 
         
             switch(userMenuOption)
             {
                 case 1:
-                Console.WriteLine("Welcome to the game: Please enter a name");
-                GameBoard.PrintBoard();
-                GameEnd.AskNewGame();
+                // Console.WriteLine("Welcome to the game: Please enter a name");
+                // GameBoard.PrintBoard();
+                // GameEnd.AskNewGame();
                 break;
 
                 case 2:
@@ -50,12 +53,9 @@ class GameStart {
                 break;
 
                 case 3:
-                LeaderBoard.LoadLeaderboard();
                 break;
                             
                 case 4:
-                Console.WriteLine("Colaborators:");
-                Console.WriteLine("Michael Phan");
                 break;
 
                 case 9:
@@ -63,9 +63,11 @@ class GameStart {
                 break;
 
                 default:
+                Console.WriteLine("");
                 Console.WriteLine("Please enter a valid menu optiion!");
-                PrintStartMenu();
                 break;
             }
+        }
+
     }
 }
