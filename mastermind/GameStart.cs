@@ -46,9 +46,8 @@ class GameStart {
             switch(userMenuOption)
             {
                 case 1:
-                // Console.WriteLine("Welcome to the game: Please enter a name");
-                // GameBoard.PrintBoard();
-                // GameEnd.AskNewGame();
+                GameMaster.PlayGame();
+                GameEnd.AskNewGame();
                 break;
 
                 case 2:

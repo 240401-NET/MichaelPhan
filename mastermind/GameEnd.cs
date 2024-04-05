@@ -24,10 +24,7 @@ class GameEnd {
     public static void AnswerToNewGameQuestion (string response) 
     {
         while (response != "n")
-
-        // AskNewGame();
-        // response = GetUserAnswer();
-
+        
         {
             switch (response)
             {

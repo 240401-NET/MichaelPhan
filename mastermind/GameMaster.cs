@@ -4,14 +4,18 @@ namespace mastermind;
 
 class GameMaster {
 
-    public int maxTurns = 12;
-
+    public static void OnGameStartUp ()
+    {
+        GameStart.AtGameBoot();
+        GameStart.HandleUserChoice();
+    }
     public static void PlayGame() 
     {
-        string[] secretCode = ["O", "G", "Y", "G"];/*GameMaintenance.GenerateColorCode(GameMaintenance.colors);*/
+        string[] secretCode = GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
-        while (currentTurn < 2)
+        while (currentTurn < 8)
         {
+            GameBoard.PrintBoard();
             string playerGuess = GameMaintenance.GetGuess();
             string[] playerGuessArray = GameMaintenance.ConvertGuessToArray(playerGuess);
             GameMaintenance.CheckIfGuessOnlyHasValidColors(playerGuessArray, GameMaintenance.colors);
@@ -33,7 +37,7 @@ class GameMaster {
                 Console.WriteLine("The secrete code was: " + codeString);
                 break;
             } 
-            else if (win == false && currentTurn == 2)
+            else if (win == false && currentTurn == 8)
             {
                 string codeString = "";
                 foreach (string code in secretCode)

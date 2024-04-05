@@ -26,10 +26,16 @@ class Rules {
     }
 
     public static void RulesMenuNavigation(int menuOption) {
-        if (menuOption == 1) {
+        if (menuOption == 1) 
+        {
             GameStart.HandleUserChoice();
         }
-        else {
+        else if (menuOption == 2)
+        {
+            GameMaster.PlayGame();
+        }
+        else 
+        {
             Console.WriteLine("");
             Console.WriteLine("Please enter a valid menu optiion!");
             int menuOptions = GameStart.UserChoice();
