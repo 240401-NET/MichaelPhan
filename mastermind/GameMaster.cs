@@ -11,11 +11,14 @@ class GameMaster {
     }
     public static void PlayGame() 
     {
-        string[] secretCode = GameMaintenance.GenerateColorCode(GameMaintenance.colors);
+        string[] secretCode = 
+        ["B", "G", "Y", "P"];
+        // GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
+        Console.WriteLine("");
+        GameBoard.PrintBoard();
         while (currentTurn < 8)
         {
-            GameBoard.PrintBoard();
             string playerGuess = GameMaintenance.GetGuess();
             string[] playerGuessArray = GameMaintenance.ConvertGuessToArray(playerGuess);
             GameMaintenance.CheckIfGuessOnlyHasValidColors(playerGuessArray, GameMaintenance.colors);
@@ -30,22 +33,27 @@ class GameMaster {
                 string codeString = "";
                 Console.WriteLine("");
                 Console.WriteLine("Congratulations! You won!");
+                Console.WriteLine("");
                 foreach (string code in secretCode)
                 {
                     codeString += $"{code}, ";
                 }
                 Console.WriteLine("The secrete code was: " + codeString);
+                Console.WriteLine("");
                 break;
             } 
             else if (win == false && currentTurn == 8)
             {
                 string codeString = "";
+                Console.WriteLine("");
                 foreach (string code in secretCode)
                 {
                     codeString += $"{code}, ";
                 }
                 Console.WriteLine("Unfortunately you have lost! The secret code was: " + codeString);
+                Console.WriteLine("");
             }
         }
+        GameEnd.AnswerToNewGameQuestion();
     }
 }

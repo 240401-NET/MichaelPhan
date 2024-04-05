@@ -1,46 +1,48 @@
 using System.Collections;
+using System.Net;
 
 namespace mastermind;
 
 class GameEnd {
 
+    public static int response = 0;
     public static void AskNewGame() 
     {
-        Console.WriteLine("Would you like you like to start a new game? (y/n)");
-        Console.ReadLine();
+        Console.WriteLine("Would you like you like to start a new game?");
+        Console.WriteLine("1. Yes");
+        Console.WriteLine("2. No");
+        Console.WriteLine("");
     }
 
-    public static string GetUserAnswer() {
+    public static int GetUserAnswer() {
 
         try {
-            return Console.ReadLine()!;
+            return Convert.ToInt32(Console.ReadLine());
         } catch (Exception e)
         {
             Console.WriteLine(e.Message + "Invalid response");
-            return "-2";
+            return -2;
         }
     }
 
-    public static void AnswerToNewGameQuestion (string response) 
+    public static void AnswerToNewGameQuestion () 
     {
-        while (response != "n")
-        
-        {
-            switch (response)
+            AskNewGame();
+            response = GetUserAnswer();
             {
-                case "y":
-                GameMaster.PlayGame();
-                break;
+                switch (response)
+                {
+                    case 1:
+                    GameMaster.PlayGame();
+                    break;
 
-                case "n":
-                Console.WriteLine("Goodbye! Thanks for playing");
-                break;
+                    case 2:
+                    break;
             
-                default:
-                Console.WriteLine("Please enter a valid menu optiion!");
-                break;
-            }
-            
+                    default:
+                    Console.WriteLine("Please enter a valid menu optiion!");
+                    break;
+                }
         }
     }
 }

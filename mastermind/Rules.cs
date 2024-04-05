@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Net;
 
 namespace mastermind;
@@ -19,27 +20,29 @@ class Rules {
         Console.WriteLine("What would you like to do next?");
         Console.WriteLine("");
         Console.WriteLine("1. Main Menu");
-        Console.WriteLine("2. Start Game");
+        Console.WriteLine("2. New Game");
         Console.WriteLine("");
         int userAnswer = GameStart.UserChoice();
         RulesMenuNavigation(userAnswer);
     }
 
-    public static void RulesMenuNavigation(int menuOption) {
-        if (menuOption == 1) 
-        {
-            GameStart.HandleUserChoice();
-        }
-        else if (menuOption == 2)
-        {
-            GameMaster.PlayGame();
-        }
-        else 
-        {
-            Console.WriteLine("");
-            Console.WriteLine("Please enter a valid menu optiion!");
-            int menuOptions = GameStart.UserChoice();
-            RulesMenuNavigation(menuOptions);
-        }
+    public static void RulesMenuNavigation(int menuOption) 
+    {
+            switch (menuOption) {
+                case 1:
+                GameStart.HandleUserChoice();
+                break;
+        
+                case 2:
+                GameMaster.PlayGame();
+                break;
+                
+                default:
+                Console.WriteLine("");
+                Console.WriteLine("Please enter a valid menu optiion!");
+                int menuOptions = GameStart.UserChoice();
+                RulesMenuNavigation(menuOptions);
+                break;
+            }
     }
 }

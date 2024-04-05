@@ -8,8 +8,8 @@ class Player {
     3. Nickname
     4. List of previous solves/solutions
 */
-    public string name {get; set;}
-    public string nickname {get; set;}
+    public string? name {get; set;}
+    public string? nickname {get; set;}
     public List<PreviousSolutions> previousSolutions = new();
 
 

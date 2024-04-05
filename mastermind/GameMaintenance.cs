@@ -98,22 +98,24 @@ class GameMaintenance {
         string[] results = new string[4];
         string[] codeCopy = new string[4];
         code.CopyTo(codeCopy, 0);
-        for (int i = 0; i < guess.Length; i++)
+        int i = 0;
+        foreach (string guesses in guess)
         {
-            if (guess[i] == codeCopy[i])
+            if (guesses == code[i])
             {
                 results[i] = "+";
                 codeCopy[i] = null!;
             }
-            else if (codeCopy.Contains(guess[i]))
+            else if (code.Contains(guesses) && codeCopy[Array.IndexOf(guess, guesses)] != null)
             {
                 results[i] = "*";
-                codeCopy[Array.IndexOf(guess, guess[i])] = null!;
+                codeCopy[Array.IndexOf(guess, guesses)] = null!;
             }
             else 
             {
                 results[i] = "-";
             }
+            i++;
         }
         return results;
     }

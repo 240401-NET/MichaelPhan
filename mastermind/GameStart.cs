@@ -17,7 +17,7 @@ class GameStart {
         Console.WriteLine("");
         Console.WriteLine("Please chose one of the following options:");
         Console.WriteLine("");
-        Console.WriteLine("1. Game");
+        Console.WriteLine("1. New Game");
         Console.WriteLine("2. Rules");
         Console.WriteLine("3. Leaderboards");
         Console.WriteLine("9. Exit");
@@ -47,7 +47,6 @@ class GameStart {
             {
                 case 1:
                 GameMaster.PlayGame();
-                GameEnd.AskNewGame();
                 break;
 
                 case 2:
