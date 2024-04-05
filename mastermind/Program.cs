@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 
 namespace mastermind;
 
@@ -15,9 +16,8 @@ class Program
         // GameStart.HandleUserChoice();
 
         // List<Player> playersList = new();
-        string playerGuess = GameMaintenance.GetGuess();
-        string[] playerGuessArray = GameMaintenance.ConvertGuessToArray(playerGuess);
-        GameMaintenance.CheckIfGuessOnlyHasValidColors(playerGuessArray, GameMaintenance.colors);
-        GameMaintenance.ValidGuess(playerGuessArray, GameMaintenance.colors);
+
+        // Checks for funcions in GameMaintenance class:
+        GameMaster.PlayGame();
     }
 }

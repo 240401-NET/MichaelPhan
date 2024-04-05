@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Xml.XPath;
 using Microsoft.VisualBasic;
 
 namespace mastermind;
@@ -38,13 +39,6 @@ class GameMaintenance {
         return zeroIndexing;
     }
 
-    // Tested that Secrete code creates a code with duplicates and contains all colors in the colors array: Passed
-    // public static void printSecretCode (string [] secretCode) {
-    //     foreach (string color in secretCode) {
-    //         Console.WriteLine($"The Color code is: {color}");
-    //     }
-    // }
-
     public static bool ValidGuess (string[] guess, string[] color) 
     {
         if (guess.Length == 4 & CheckIfGuessOnlyHasValidColors(guess, color) == true)
@@ -61,17 +55,11 @@ class GameMaintenance {
     {
         Console.WriteLine("Please enter your 4-color code using the letters R, G, B, Y, O, and P");
         string guess = Console.ReadLine()!.ToUpper();
-        // This comment checks to see if the the program is taking the user's guess and changing the input into all caps: Check!
-        // Console.WriteLine(guess);
         return guess;
     }
 
     public static string[] ConvertGuessToArray (string guess) {
         string[] guessArray = guess.Split(" ");
-        // Test if guess is correctly converted into an array of string (chars): Passed
-        // for (int i = 0; i < guessArray.Length; i++){
-        //     // Console.Write(guessArray[i]);
-        // }
         return guessArray;
     }
 
@@ -96,15 +84,33 @@ class GameMaintenance {
         
         if (unmatchedColor == 0)
         {
-            // Checks if function correctly checks if all the color guesses are valid
-            // Console.WriteLine("WOOOOO!");
             return true;
         }
         else
         {
-            // Checks if function correctly outputs false when user tries to guess a nonvalid color
-            // Console.WriteLine("BOOOOO!");
             return false;
         }
+    }
+
+    public static string[] CompareGuessToSecretCode (string[] guess, string[] code)
+    {
+        string[] results = new string[4];
+        for (int i = 0; i < guess.Length; i++)
+        {
+            if (guess[i] == code[i])
+            {
+                results[i] = "+";
+                code[i] = null!;
+            }
+            else if (code.Contains(guess[i]))
+            {
+                results[i] = "*";
+            }
+            else 
+            {
+                results[i] = "-";
+            }
+        }
+        return results;
     }
 }
