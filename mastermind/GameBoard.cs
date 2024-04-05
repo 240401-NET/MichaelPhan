@@ -31,6 +31,7 @@ class GameBoard {
             }
             Console.Write("  |");
             Console.WriteLine("");
+            Console.WriteLine("|============================================|");
         }
         
         // for (int i = 0; i <= currentTurn; i++)

@@ -53,6 +53,7 @@ class GameMaintenance {
 
     public static string GetGuess() 
     {
+        Console.WriteLine("");
         Console.WriteLine("Please enter your 4-color code using the letters R, G, B, Y, O, and P");
         string guess = Console.ReadLine()!.ToUpper();
         return guess;
@@ -95,16 +96,19 @@ class GameMaintenance {
     public static string[] CompareGuessToSecretCode (string[] guess, string[] code)
     {
         string[] results = new string[4];
+        string[] codeCopy = new string[4];
+        code.CopyTo(codeCopy, 0);
         for (int i = 0; i < guess.Length; i++)
         {
-            if (guess[i] == code[i])
+            if (guess[i] == codeCopy[i])
             {
                 results[i] = "+";
-                code[i] = null!;
+                codeCopy[i] = null!;
             }
-            else if (code.Contains(guess[i]))
+            else if (codeCopy.Contains(guess[i]))
             {
                 results[i] = "*";
+                codeCopy[Array.IndexOf(guess, guess[i])] = null!;
             }
             else 
             {
@@ -113,4 +117,28 @@ class GameMaintenance {
         }
         return results;
     }
+
+    public static bool CheckForWin(string[] results) {
+        string[] winningArray = ["+", "+", "+", "+"];
+        bool isEqual = results.SequenceEqual(winningArray);
+        return isEqual;
+    }
+
+    // public static void ifLoss(bool win, string[]secretCode, int currentTurn)
+    // {
+    //     // if (win == true)
+    //     // {
+    //     //     string codeString = "";
+    //     //     Console.WriteLine("Congratulations! You won!");
+    //     //     foreach (string code in secretCode)
+    //     //     {
+    //     //         codeString = $"{code}, ";
+    //     //     }
+    //     //     Console.WriteLine("The secrete code was: " + codeString);
+    //     // } 
+    //     // if (win == false && currentTurn == 12)
+    //     // {
+    //     //     Console.WriteLine("Unfortunately you have lost! Thanks for playing!");
+    //     // }
+    // }
 }
