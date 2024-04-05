@@ -1,8 +1,13 @@
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 
 namespace mastermind;
 
 class GameMaster {
+
+    // public static string[] secretCode {get; set;}
+    // public static int currentTurn {get; set;}
+
 
     public static void OnGameStartUp ()
     {
@@ -12,8 +17,10 @@ class GameMaster {
     public static void PlayGame() 
     {
         string[] secretCode = 
-        ["B", "G", "Y", "P"];
-        // GameMaintenance.GenerateColorCode(GameMaintenance.colors);
+         ["P", "B", "G", "B"];
+        // [p b g b]
+
+        //GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
         Console.WriteLine("");
         GameBoard.PrintBoard();
@@ -40,6 +47,8 @@ class GameMaster {
                 }
                 Console.WriteLine("The secrete code was: " + codeString);
                 Console.WriteLine("");
+                string stringFormForSecretCode = string.Join(" ", secretCode);
+                Player.GenerateSolvesList(stringFormForSecretCode, currentTurn);
                 break;
             } 
             else if (win == false && currentTurn == 8)
@@ -54,6 +63,9 @@ class GameMaster {
                 Console.WriteLine("");
             }
         }
+        // Player.PrintDictionary();
         GameEnd.AnswerToNewGameQuestion();
+        
+
     }
 }

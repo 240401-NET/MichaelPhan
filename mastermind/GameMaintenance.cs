@@ -106,7 +106,7 @@ class GameMaintenance {
                 results[i] = "+";
                 codeCopy[i] = null!;
             }
-            else if (code.Contains(guesses) && codeCopy[Array.IndexOf(guess, guesses)] != null)
+            else if (code.Contains(guesses) && codeCopy[Array.IndexOf(guess, guesses)] != null && results[Array.IndexOf(guess, guesses)] != null)
             {
                 results[i] = "*";
                 codeCopy[Array.IndexOf(guess, guesses)] = null!;
