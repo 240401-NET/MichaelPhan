@@ -17,7 +17,7 @@ class GameMaster {
     public static void PlayGame() 
     {
         string[] secretCode = 
-        ["O", "O", "Y", "B"];
+        ["B", "O", "R", "R"];
 
         // GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
@@ -62,7 +62,7 @@ class GameMaster {
                 Console.WriteLine("");
             }
         }
-        // Player.PrintDictionary();
+        Player.PrintDictionary();
         GameEnd.AnswerToNewGameQuestion();
         
 

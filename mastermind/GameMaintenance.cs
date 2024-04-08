@@ -92,25 +92,34 @@ class GameMaintenance {
                 results[i] = "+";
                 codeCopy[i] = "0";
             }
-        }
-
-        for (int j = 0; j < guess.Length; j++)
-        {
-            if(codeCopy.Contains(guess[j]) && results[j] !="+")
+            else if(codeCopy.Contains(guess[i]) && results[i] !="+")
             {
-                results[j] = "*";
-                codeCopy[Array.IndexOf(code, guess[j])] = "0";
-            }    
-        }
-
-        for (int k = 0; k < guess.Length; k++)
-        {
-            if(!code.Contains(guess[k]))
+                results[i] = "*";
+                codeCopy[Array.IndexOf(code, guess[i])] = "0";
+            }
+            else 
             {
-                results[k] = "-";
-                codeCopy[k] = "0";
+                results[i] = "-";
             }
         }
+
+        // for (int j = 0; j < guess.Length; j++)
+        // {
+        //     if(codeCopy.Contains(guess[j]) && results[j] !="+")
+        //     {
+        //         results[j] = "*";
+        //         codeCopy[Array.IndexOf(code, guess[j])] = "0";
+        //     }    
+        // }
+
+        // for (int k = 0; k < guess.Length; k++)
+        // {
+        //     if(!code.Contains(guess[k]) || !codeCopy.Contains(guess[k]))
+        //     {
+        //         results[k] = "-";
+        //         codeCopy[k] = "0";
+        //     }
+        // }
         return results;
     }
 
