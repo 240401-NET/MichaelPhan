@@ -1,24 +1,11 @@
 using System.Drawing;
+using System.Runtime.Serialization;
 using System.Xml.XPath;
 using Microsoft.VisualBasic;
-
+using System.Linq;
 namespace mastermind;
 
 class GameMaintenance {
-
-/* What is this class in charge of?
-    1. Creating the secret four color code each time a new game instance is ran
-    2. Take player's guess and compare that to the secret code
-    3. What to do with the guess:
-        3. Check if the guess correctly matches the secret code
-            3.a If yes, print winner message, end instance of the game and update player data 
-            (previous solves [correct code, number of turns])
-            3.b. If no, update turn counter, give player feedback based on their guess 
-            and proceed with the game until maximum number of turns reached, or the correct code
-            is guessed.
-    4. Prompt user to continue a new game or to end the application entirely.
-*/
-    // possible colors that the color code combination can be made from
     public static string[] colors = ["R", "Y", "B", "G", "O", "P"];
 
     public static string[] GenerateColorCode(string[] colors) 
@@ -98,24 +85,31 @@ class GameMaintenance {
         string[] results = new string[4];
         string[] codeCopy = new string[4];
         code.CopyTo(codeCopy, 0);
-        int i = 0;
-        foreach (string guesses in guess)
+        for (int i = 0; i < guess.Length; i++)
         {
-            if (guesses == code[i])
+            if(guess[i] == codeCopy[i])
             {
                 results[i] = "+";
-                codeCopy[i] = null!;
+                codeCopy[i] = "0";
             }
-            else if (code.Contains(guesses) && codeCopy[Array.IndexOf(guess, guesses)] != null && results[Array.IndexOf(guess, guesses)] != null)
+        }
+
+        for (int j = 0; j < guess.Length; j++)
+        {
+            if(codeCopy.Contains(guess[j]) && results[j] !="+")
             {
-                results[i] = "*";
-                codeCopy[Array.IndexOf(guess, guesses)] = null!;
-            }
-            else 
+                results[j] = "*";
+                codeCopy[Array.IndexOf(code, guess[j])] = "0";
+            }    
+        }
+
+        for (int k = 0; k < guess.Length; k++)
+        {
+            if(!code.Contains(guess[k]))
             {
-                results[i] = "-";
+                results[k] = "-";
+                codeCopy[k] = "0";
             }
-            i++;
         }
         return results;
     }
@@ -125,22 +119,4 @@ class GameMaintenance {
         bool isEqual = results.SequenceEqual(winningArray);
         return isEqual;
     }
-
-    // public static void ifLoss(bool win, string[]secretCode, int currentTurn)
-    // {
-    //     // if (win == true)
-    //     // {
-    //     //     string codeString = "";
-    //     //     Console.WriteLine("Congratulations! You won!");
-    //     //     foreach (string code in secretCode)
-    //     //     {
-    //     //         codeString = $"{code}, ";
-    //     //     }
-    //     //     Console.WriteLine("The secrete code was: " + codeString);
-    //     // } 
-    //     // if (win == false && currentTurn == 12)
-    //     // {
-    //     //     Console.WriteLine("Unfortunately you have lost! Thanks for playing!");
-    //     // }
-    // }
 }

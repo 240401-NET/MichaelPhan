@@ -17,10 +17,9 @@ class GameMaster {
     public static void PlayGame() 
     {
         string[] secretCode = 
-         ["P", "B", "G", "B"];
-        // [p b g b]
+        ["O", "O", "Y", "B"];
 
-        //GameMaintenance.GenerateColorCode(GameMaintenance.colors);
+        // GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
         Console.WriteLine("");
         GameBoard.PrintBoard();
