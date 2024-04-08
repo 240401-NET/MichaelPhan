@@ -5,7 +5,7 @@ class Player {
     public string? name {get; set;}
     public string? nickname {get; set;}
     public int? totalSolves {get; set;}
-    public Dictionary<string, int> previousSolutions {get; set;}
+    public Dictionary<string, int>? previousSolutions {get; set;}
 
 
     //constructor for Player Class

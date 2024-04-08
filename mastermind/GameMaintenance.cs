@@ -5,7 +5,7 @@ using Microsoft.VisualBasic;
 using System.Linq;
 namespace mastermind;
 
-class GameMaintenance {
+public class GameMaintenance {
     public static string[] colors = ["R", "Y", "B", "G", "O", "P"];
 
     public static string[] GenerateColorCode(string[] colors) 

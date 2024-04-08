@@ -17,12 +17,21 @@ class FilePersistence {
 // }
     public static Player LoadPlayer(){
 
+            try{
             string filePath = "playersScores.json";
             string jsonCharacters = File.ReadAllText(filePath);
 
             // characters is assigned the deserialized list of characters from the jsonCharacters string. ~ Ricardo PenaMcKnight
-            Player playerX = JsonSerializer.Deserialize<Player>(jsonCharacters);
-            return playerX;   
+            Player playerX = JsonSerializer.Deserialize<Player>(jsonCharacters)!;
+            return playerX!;
+            }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message +"File not generated, first time execution!");
+        }
+        Player x = new("x", "x", GameMaster.previousSolutions);
+        return x;
+   
     }
 
 public static void PersistCharacter(Player player) 
