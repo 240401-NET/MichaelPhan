@@ -1,4 +1,6 @@
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
+using System.Text.Json;
 
 namespace mastermind;
 
@@ -13,8 +15,24 @@ class FilePersistence {
 // public static List<Player> LoadPreviousPlayers(List<Player> players) {
 
 // }
+    public static Player LoadPlayer(){
 
+            string filePath = "playersScores.json";
+            string jsonCharacters = File.ReadAllText(filePath);
 
+            // characters is assigned the deserialized list of characters from the jsonCharacters string. ~ Ricardo PenaMcKnight
+            Player playerX = JsonSerializer.Deserialize<Player>(jsonCharacters);
+            return playerX;   
+    }
+
+public static void PersistCharacter(Player player) 
+{
+    string jsonPlayers = JsonSerializer.Serialize(player);
+
+    string filePath = "playersScores.json";
+
+    File.WriteAllText(filePath, jsonPlayers);
+}
 
 
 }

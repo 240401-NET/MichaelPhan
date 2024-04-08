@@ -5,12 +5,16 @@ class Player {
     public string? name {get; set;}
     public string? nickname {get; set;}
     public int? totalSolves {get; set;}
-    public Dictionary<string, int> previousSolutions = new();
+    public Dictionary<string, int> previousSolutions {get; set;}
 
 
     //constructor for Player Class
     public Player () {}
 
+    public Player(Dictionary<string, int> previousSolutions) 
+    {
+        this.previousSolutions = previousSolutions;
+    }
     public Player(string name, string nickname) 
     {
         this.name = name;

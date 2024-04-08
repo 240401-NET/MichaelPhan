@@ -15,6 +15,15 @@ class GameMaster {
         GameStart.AtGameBoot();
         GameStart.HandleUserChoice();
     }
+
+    public static Player GeneratePlayer(Dictionary<string, int> dict)
+    {
+        Player player = new();
+        Console.WriteLine("What is the name?");
+        player.previousSolutions = dict;
+        player.name = Console.ReadLine();
+        return player;
+    }
     public static void PlayGame() 
     {
         string[] secretCode = 
@@ -63,7 +72,7 @@ class GameMaster {
                 Console.WriteLine("");
             }
         }
-        Player newPlayer = new("michael", "zekkan", previousSolutions);
+        // Player newPlayer = new("michael", "zekkan", previousSolutions);
         // newPlayer.Printout();
         // newPlayer.PrintDictionary(previousSolutions);
         GameEnd.AnswerToNewGameQuestion();
