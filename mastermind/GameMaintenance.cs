@@ -102,24 +102,6 @@ class GameMaintenance {
                 results[i] = "-";
             }
         }
-
-        // for (int j = 0; j < guess.Length; j++)
-        // {
-        //     if(codeCopy.Contains(guess[j]) && results[j] !="+")
-        //     {
-        //         results[j] = "*";
-        //         codeCopy[Array.IndexOf(code, guess[j])] = "0";
-        //     }    
-        // }
-
-        // for (int k = 0; k < guess.Length; k++)
-        // {
-        //     if(!code.Contains(guess[k]) || !codeCopy.Contains(guess[k]))
-        //     {
-        //         results[k] = "-";
-        //         codeCopy[k] = "0";
-        //     }
-        // }
         return results;
     }
 
@@ -128,4 +110,5 @@ class GameMaintenance {
         bool isEqual = results.SequenceEqual(winningArray);
         return isEqual;
     }
+    
 }

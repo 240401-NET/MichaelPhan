@@ -54,7 +54,7 @@ class GameStart {
                 break;
 
                 case 3:
-                Console.WriteLine("Leaderboard");
+                LeaderBoard.LoadLeaderboard();
                 break;
 
                 case 9:

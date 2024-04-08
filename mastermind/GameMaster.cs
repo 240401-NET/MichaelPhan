@@ -7,6 +7,7 @@ class GameMaster {
 
     // public static string[] secretCode {get; set;}
     // public static int currentTurn {get; set;}
+    public static Dictionary<string, int> previousSolutions = new();
 
 
     public static void OnGameStartUp ()
@@ -17,9 +18,9 @@ class GameMaster {
     public static void PlayGame() 
     {
         string[] secretCode = 
-        ["B", "O", "R", "R"];
+        //["B", "O", "R", "R"];
 
-        // GameMaintenance.GenerateColorCode(GameMaintenance.colors);
+        GameMaintenance.GenerateColorCode(GameMaintenance.colors);
         int currentTurn = 0;
         Console.WriteLine("");
         GameBoard.PrintBoard();
@@ -47,7 +48,7 @@ class GameMaster {
                 Console.WriteLine("The secrete code was: " + codeString);
                 Console.WriteLine("");
                 string stringFormForSecretCode = string.Join(" ", secretCode);
-                Player.GenerateSolvesList(stringFormForSecretCode, currentTurn);
+                Player.GenerateSolvesList(stringFormForSecretCode, currentTurn, previousSolutions);
                 break;
             } 
             else if (win == false && currentTurn == 8)
@@ -62,9 +63,9 @@ class GameMaster {
                 Console.WriteLine("");
             }
         }
-        Player.PrintDictionary();
+        Player newPlayer = new("michael", "zekkan", previousSolutions);
+        // newPlayer.Printout();
+        // newPlayer.PrintDictionary(previousSolutions);
         GameEnd.AnswerToNewGameQuestion();
-        
-
     }
 }

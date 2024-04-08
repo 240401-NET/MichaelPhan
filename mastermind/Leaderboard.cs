@@ -3,16 +3,37 @@ using System.Reflection;
 namespace mastermind;
 
 class LeaderBoard {
-
-/* What is this class responsible for?
-    1. If the "display leaderboard" option on the menu is chosen:
-        1.a. display a "board" of players that have previously played the game
-        1.b. split display:
-            1.b.i. One side displays total number of solves in ascending order
-            1.b.ii. Displays quickest solve in descending order
-*/
-
     public static void LoadLeaderboard() {
-        Console.WriteLine("These are the previous leaders");
+        Console.WriteLine(GameMaster.previousSolutions.Count + " solves");
+        Console.WriteLine("Each solve:");
+        Player.PrintDictionary(GameMaster.previousSolutions);
+        Console.WriteLine("");
+        Console.WriteLine("What would you like to do next?");
+        Console.WriteLine("");
+        Console.WriteLine("1. Main Menu");
+        Console.WriteLine("2. New Game");
+        Console.WriteLine("");
+        int userAnswer = GameStart.UserChoice();
+        LeaderBoardMenuNavigation(userAnswer);
+    }
+
+    public static void LeaderBoardMenuNavigation(int menuOption) 
+    {
+            switch (menuOption) {
+                case 1:
+                GameStart.HandleUserChoice();
+                break;
+        
+                case 2:
+                GameMaster.PlayGame();
+                break;
+                
+                default:
+                Console.WriteLine("");
+                Console.WriteLine("Please enter a valid menu optiion!");
+                int menuOptions = GameStart.UserChoice();
+                LeaderBoardMenuNavigation(menuOptions);
+                break;
+            }
     }
 }
