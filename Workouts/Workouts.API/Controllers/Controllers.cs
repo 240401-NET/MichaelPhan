@@ -21,6 +21,14 @@ namespace Workouts.Controllers;
         {
             _workRepo = repo;
         }
+                
+        [HttpGet("/users/")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IEnumerable<Users> GetAllUsers()
+        {
+            var allUsers = _workRepo.GetAllUsers();
+            return allUsers;        
+        }
 
         [HttpGet("/users/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
