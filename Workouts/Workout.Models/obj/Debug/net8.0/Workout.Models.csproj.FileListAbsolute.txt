@@ -1,0 +1,12 @@
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\bin\Debug\net8.0\Workout.Models.deps.json
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\bin\Debug\net8.0\Workout.Models.dll
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\bin\Debug\net8.0\Workout.Models.pdb
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.AssemblyInfoInputs.cache
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.AssemblyInfo.cs
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.csproj.CoreCompileInputs.cache
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.sourcelink.json
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.dll
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\refint\Workout.Models.dll
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\Workout.Models.pdb
+C:\Users\zekka\Documents\revature\240401-NET+AI\MichaelPhan\Workouts\Workout.Models\obj\Debug\net8.0\ref\Workout.Models.dll

@@ -1,0 +1,6 @@
+@Workouts.API_HostAddress = http://localhost:5014
+
+GET {{Workouts.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
