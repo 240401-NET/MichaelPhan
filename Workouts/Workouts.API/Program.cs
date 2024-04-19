@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Workouts.Data;
 using Workout.Models;
 using Microsoft.AspNetCore.Mvc;
+using Workouts.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WorkoutsDbContext>(options => options.
     UseSqlServer(builder.Configuration["dbconnectionstr"]));
 builder.Services.AddScoped<IRepository, WorkoutsRepository>();
+builder.Services.AddScoped<IWorkoutsServices, WorkoutsService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers()

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Workouts.Data;
 using Workout.Models;
+using Workouts.Services;
 
 namespace Workouts.Controllers;
 
@@ -15,10 +16,12 @@ namespace Workouts.Controllers;
     [ApiController]
     public class UsersControllers : ControllerBase
     {
+        private readonly IWorkoutsServices _workService;
         private readonly IRepository _workRepo;
 
-        public UsersControllers (IRepository repo)
+        public UsersControllers (IWorkoutsServices service, IRepository repo)
         {
+            this._workService = service;
             _workRepo = repo;
         }
                 
@@ -26,23 +29,21 @@ namespace Workouts.Controllers;
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IEnumerable<Users> GetAllUsers()
         {
-            var allUsers = _workRepo.GetAllUsers();
-            return allUsers;        
+            var allUsers = _workService.GetAllUsers();
+            return allUsers!;        
         }
 
         [HttpGet("/users/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public Users GetUserById(int id)
         {
-            var searchedUser = _workRepo.GetUserById(id);
-            return searchedUser;        
+            return _workService.GetUserById(id);      
         }
 
         [HttpPost("/users")]
         public Users AddUser(Users user)
         {
-            return _workRepo.CreateNewUser(user);        
-            
+            return _workService.AddUser(user);
         }
 
         [HttpPut("/users/{id}")]
