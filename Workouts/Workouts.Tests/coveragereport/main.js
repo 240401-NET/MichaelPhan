@@ -221,7 +221,7 @@ var assemblies = [
   {
     "name": "Workout.Models",
     "classes": [
-      { "name": "Workout.Models.Exercises", "rp": "Workout.Models_Exercises.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Workout.Models.Exercises", "rp": "Workout.Models_Exercises.html", "cl": 3, "ucl": 1, "cal": 4, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Workout.Models.Users", "rp": "Workout.Models_Users.html", "cl": 4, "ucl": 1, "cal": 5, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
   {
@@ -230,7 +230,7 @@ var assemblies = [
       { "name": "Program", "rp": "Workouts.API_Program.html", "cl": 0, "ucl": 59, "cal": 59, "tl": 86, "cb": 0, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "WeatherForecast", "rp": "Workouts.API_WeatherForecast.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 86, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Workouts.Controllers.UsersControllers", "rp": "Workouts.API_UsersControllers.html", "cl": 0, "ucl": 30, "cal": 30, "tl": 112, "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "Workouts.Services.WorkoutsService", "rp": "Workouts.API_WorkoutsService.html", "cl": 10, "ucl": 3, "cal": 13, "tl": 31, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Workouts.Services.WorkoutsService", "rp": "Workouts.API_WorkoutsService.html", "cl": 13, "ucl": 6, "cal": 19, "tl": 39, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "Workouts.Data",
@@ -242,7 +242,7 @@ var assemblies = [
       { "name": "Workouts.Data.Migrations.junctionTableattempt4", "rp": "Workouts.Data_junctionTableattempt4.html", "cl": 0, "ucl": 77, "cal": 77, "tl": 122, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Workouts.Data.Migrations.WorkoutsDbContextModelSnapshot", "rp": "Workouts.Data_WorkoutsDbContextModelSnapshot.html", "cl": 0, "ucl": 73, "cal": 73, "tl": 97, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Workouts.Data.WorkoutsDbContext", "rp": "Workouts.Data_WorkoutsDbContext.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 19, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "Workouts.Data.WorkoutsRepository", "rp": "Workouts.Data_WorkoutsRepository.html", "cl": 0, "ucl": 49, "cal": 49, "tl": 93, "cb": 0, "tb": 10, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Workouts.Data.WorkoutsRepository", "rp": "Workouts.Data_WorkoutsRepository.html", "cl": 0, "ucl": 52, "cal": 52, "tl": 97, "cb": 0, "tb": 10, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
