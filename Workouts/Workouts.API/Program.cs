@@ -2,6 +2,7 @@ using Azure.Core.Pipeline;
 using Microsoft.EntityFrameworkCore;
 using Workouts.Data;
 using Workout.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<WorkoutsDbContext>(option => option.
     UseSqlServer(builder.Configuration["dbconnectionstr"]));
-builder.Services.AddScoped<WorkoutsRepository>();
+builder.Services.AddScoped<IRepository, WorkoutsRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
@@ -45,16 +46,28 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/user", (WorkoutsRepository repo) => {
+app.MapGet("/exercises", (IRepository repo) => {
+    return repo.GetAllExercises();
+})
+.WithName("Get All Workouts")
+.WithOpenApi();
+
+app.MapGet("/user", (IRepository repo) => {
     return repo.GetAllUsers();
 })
 .WithName("Get All Users")
 .WithOpenApi();
 
-app.MapPost("/user", (WorkoutsRepository repo, Users userToCreate) => {
+app.MapPost("/user", ([FromServices] IRepository repo, [FromBody] Users userToCreate) => {
     return repo.CreateNewUser(userToCreate);
 })
 .WithName("Create New User")
+.WithOpenApi();
+
+app.MapPost("/exercises", ([FromServices] IRepository repo, [FromBody] Exercises exerciseToAdd) => {
+    return repo.AddNewExercise(exerciseToAdd);
+})
+.WithName("Add exercise to table")
 .WithOpenApi();;
 
 app.MapControllers();
