@@ -1,0 +1,6 @@
+[submodule "MEEK_Frontend"]
+	path = MEEK_Frontend
+	url = https://github.com/240401-NET/MEEK_Frontend
+[submodule "MEEK_Backend"]
+	path = MEEK_Backend
+	url = https://github.com/240401-NET/MEEK_Backend
